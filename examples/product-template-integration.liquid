@@ -1,0 +1,202 @@
+{% comment %}
+  Example integration for common Shopify themes
+  Copy the relevant section for your theme
+{% endcomment %}
+
+{% comment %} ===== DAWN THEME EXAMPLE ===== {% endcomment %}
+<!-- File: sections/product-form.liquid -->
+<!-- Add around line 50-60, after quantity selector -->
+
+<div class="product-form__quantity">
+  <label class="form__label" for="Quantity-{{ section.id }}">
+    {{ 'products.product.quantity.label' | t }}
+  </label>
+  <quantity-input class="quantity">
+    <!-- existing quantity input -->
+  </quantity-input>
+</div>
+
+<!-- ADD BUNDLE HERE -->
+{% render 'driftmats-bundle', product: product %}
+
+<div class="product-form__buttons">
+  <!-- existing add to cart button -->
+</div>
+
+{% comment %} ===== DEBUT THEME EXAMPLE ===== {% endcomment %}
+<!-- File: sections/product-template.liquid -->
+<!-- Add around line 200-250, in the product form area -->
+
+<div class="product-single__add-to-cart">
+  <label for="ProductSelect-{{ product.id }}" class="product-single__variants-label">
+    {{ 'products.product.size' | t }}
+  </label>
+  
+  <!-- existing variant selector -->
+  
+  <!-- ADD BUNDLE HERE -->
+  {% render 'driftmats-bundle', product: product %}
+  
+  <div class="product-single__cart-submit-wrapper">
+    <!-- existing add to cart button -->
+  </div>
+</div>
+
+{% comment %} ===== BROOKLYN THEME EXAMPLE ===== {% endcomment %}
+<!-- File: templates/product.liquid -->
+<!-- Add around line 150-200, in the form section -->
+
+<form action="/cart/add" method="post" enctype="multipart/form-data">
+  <div class="product-form">
+    <!-- existing variant and quantity selectors -->
+    
+    <!-- ADD BUNDLE HERE -->
+    {% render 'driftmats-bundle', product: product %}
+    
+    <div class="btn-wrapper">
+      <button type="submit" name="add" class="btn product-form__cart-submit">
+        <!-- existing button content -->
+      </button>
+    </div>
+  </div>
+</form>
+
+{% comment %} ===== IMPULSE THEME EXAMPLE ===== {% endcomment %}
+<!-- File: sections/product.liquid -->
+<!-- Add around line 300-350, after product options -->
+
+<div class="product__form-container">
+  <!-- existing product options -->
+  
+  <div class="product__quantity-wrapper">
+    <!-- existing quantity selector -->
+  </div>
+  
+  <!-- ADD BUNDLE HERE -->
+  {% render 'driftmats-bundle', product: product %}
+  
+  <div class="product__cart-buttons">
+    <!-- existing cart buttons -->
+  </div>
+</div>
+
+{% comment %} ===== MINIMAL THEME EXAMPLE ===== {% endcomment %}
+<!-- File: templates/product.liquid -->
+<!-- Add around line 100-150, after price -->
+
+<div class="product-single">
+  <div class="product-single__meta">
+    <h1 class="product-single__title">{{ product.title }}</h1>
+    <div class="product-single__prices">
+      <!-- existing price display -->
+    </div>
+    
+    <!-- ADD BUNDLE HERE -->
+    {% render 'driftmats-bundle', product: product %}
+    
+    <form action="/cart/add" method="post" enctype="multipart/form-data">
+      <!-- existing form content -->
+    </form>
+  </div>
+</div>
+
+{% comment %} ===== VENTURE THEME EXAMPLE ===== {% endcomment %}
+<!-- File: sections/product-template.liquid -->
+<!-- Add around line 250-300, in the product details -->
+
+<div class="product__content">
+  <div class="product__price">
+    <!-- existing price display -->
+  </div>
+  
+  <!-- ADD BUNDLE HERE -->
+  {% render 'driftmats-bundle', product: product %}
+  
+  <form action="/cart/add" method="post" enctype="multipart/form-data">
+    <!-- existing form -->
+  </form>
+</div>
+
+{% comment %} ===== SUPPLY THEME EXAMPLE ===== {% endcomment %}
+<!-- File: sections/product.liquid -->
+<!-- Add around line 200-250, after product variants -->
+
+<div class="product-single__form">
+  <div class="product-single__variants">
+    <!-- existing variant selector -->
+  </div>
+  
+  <!-- ADD BUNDLE HERE -->
+  {% render 'driftmats-bundle', product: product %}
+  
+  <div class="product-single__add-to-cart">
+    <!-- existing add to cart -->
+  </div>
+</div>
+
+{% comment %} ===== NARRATIVE THEME EXAMPLE ===== {% endcomment %}
+<!-- File: sections/product.liquid -->
+<!-- Add around line 180-220, before add to cart -->
+
+<div class="product__info">
+  <div class="product__price-wrap">
+    <!-- existing price -->
+  </div>
+  
+  <div class="product__description">
+    <!-- existing description -->
+  </div>
+  
+  <!-- ADD BUNDLE HERE -->
+  {% render 'driftmats-bundle', product: product %}
+  
+  <form action="/cart/add" method="post" enctype="multipart/form-data">
+    <!-- existing form -->
+  </form>
+</div>
+
+{% comment %} ===== GENERAL INTEGRATION TIPS ===== {% endcomment %}
+
+{% comment %}
+  PLACEMENT GUIDELINES:
+  
+  1. BEST LOCATIONS:
+     - After product price
+     - Before quantity selector
+     - Before add to cart button
+     - In product form area
+  
+  2. AVOID PLACING:
+     - Inside form tags (bundle has its own cart logic)
+     - In variant selector areas
+     - In product image galleries
+     - In header/footer areas
+  
+  3. CONDITIONAL RENDERING:
+     - Only show on specific products
+     - Hide on certain device types
+     - Show based on inventory levels
+  
+  EXAMPLE CONDITIONS:
+  
+  <!-- Only show for specific product -->
+  {% if product.handle == 'your-product-handle' %}
+    {% render 'driftmats-bundle', product: product %}
+  {% endif %}
+  
+  <!-- Only show for products in specific collection -->
+  {% assign bundle_products = collections['bundle-eligible'] %}
+  {% if bundle_products.products contains product %}
+    {% render 'driftmats-bundle', product: product %}
+  {% endif %}
+  
+  <!-- Only show if product has inventory -->
+  {% if product.available %}
+    {% render 'driftmats-bundle', product: product %}
+  {% endif %}
+  
+  <!-- Hide on mobile devices -->
+  <div class="hidden-mobile">
+    {% render 'driftmats-bundle', product: product %}
+  </div>
+{% endcomment %}

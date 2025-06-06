@@ -1,0 +1,286 @@
+/* Color Variants for DriftMats Bundle Clone */
+
+/* ===== ORIGINAL DRIFTMATS COLORS (Default) ===== */
+.driftmats-bundle-wrapper.original {
+  /* Red theme matching DriftMats exactly */
+}
+
+.original .bundle-option:hover,
+.original .bundle-option.selected {
+  border-color: #ff0000;
+}
+
+.original .bundle-badge {
+  background: #ff0000;
+}
+
+.original .bundle-add-to-cart {
+  background: #ff0000;
+}
+
+.original .bundle-add-to-cart:hover {
+  background: #e60000;
+}
+
+/* ===== BLUE VARIANT ===== */
+.driftmats-bundle-wrapper.blue {
+  /* Blue color scheme */
+}
+
+.blue .bundle-option:hover,
+.blue .bundle-option.selected {
+  border-color: #007cba;
+}
+
+.blue .bundle-badge {
+  background: #007cba;
+}
+
+.blue .bundle-add-to-cart {
+  background: #007cba;
+}
+
+.blue .bundle-add-to-cart:hover {
+  background: #005a87;
+}
+
+.blue .bundle-radio {
+  accent-color: #007cba;
+}
+
+/* ===== GREEN VARIANT ===== */
+.driftmats-bundle-wrapper.green {
+  /* Green color scheme */
+}
+
+.green .bundle-option:hover,
+.green .bundle-option.selected {
+  border-color: #00a651;
+}
+
+.green .bundle-badge {
+  background: #00a651;
+}
+
+.green .bundle-add-to-cart {
+  background: #00a651;
+}
+
+.green .bundle-add-to-cart:hover {
+  background: #007d3c;
+}
+
+.green .bundle-radio {
+  accent-color: #00a651;
+}
+
+/* ===== PURPLE VARIANT ===== */
+.driftmats-bundle-wrapper.purple {
+  /* Purple color scheme */
+}
+
+.purple .bundle-option:hover,
+.purple .bundle-option.selected {
+  border-color: #8b5cf6;
+}
+
+.purple .bundle-badge {
+  background: #8b5cf6;
+}
+
+.purple .bundle-add-to-cart {
+  background: #8b5cf6;
+}
+
+.purple .bundle-add-to-cart:hover {
+  background: #7c3aed;
+}
+
+.purple .bundle-radio {
+  accent-color: #8b5cf6;
+}
+
+/* ===== ORANGE VARIANT ===== */
+.driftmats-bundle-wrapper.orange {
+  /* Orange color scheme */
+}
+
+.orange .bundle-option:hover,
+.orange .bundle-option.selected {
+  border-color: #f97316;
+}
+
+.orange .bundle-badge {
+  background: #f97316;
+}
+
+.orange .bundle-add-to-cart {
+  background: #f97316;
+}
+
+.orange .bundle-add-to-cart:hover {
+  background: #ea580c;
+}
+
+.orange .bundle-radio {
+  accent-color: #f97316;
+}
+
+/* ===== BLACK VARIANT ===== */
+.driftmats-bundle-wrapper.black {
+  /* Black/dark color scheme */
+}
+
+.black .bundle-option:hover,
+.black .bundle-option.selected {
+  border-color: #1f2937;
+}
+
+.black .bundle-badge {
+  background: #1f2937;
+}
+
+.black .bundle-add-to-cart {
+  background: #1f2937;
+}
+
+.black .bundle-add-to-cart:hover {
+  background: #111827;
+}
+
+.black .bundle-radio {
+  accent-color: #1f2937;
+}
+
+/* ===== PINK VARIANT ===== */
+.driftmats-bundle-wrapper.pink {
+  /* Pink color scheme */
+}
+
+.pink .bundle-option:hover,
+.pink .bundle-option.selected {
+  border-color: #ec4899;
+}
+
+.pink .bundle-badge {
+  background: #ec4899;
+}
+
+.pink .bundle-add-to-cart {
+  background: #ec4899;
+}
+
+.pink .bundle-add-to-cart:hover {
+  background: #db2777;
+}
+
+.pink .bundle-radio {
+  accent-color: #ec4899;
+}
+
+/* ===== TEAL VARIANT ===== */
+.driftmats-bundle-wrapper.teal {
+  /* Teal color scheme */
+}
+
+.teal .bundle-option:hover,
+.teal .bundle-option.selected {
+  border-color: #14b8a6;
+}
+
+.teal .bundle-badge {
+  background: #14b8a6;
+}
+
+.teal .bundle-add-to-cart {
+  background: #14b8a6;
+}
+
+.teal .bundle-add-to-cart:hover {
+  background: #0f766e;
+}
+
+.teal .bundle-radio {
+  accent-color: #14b8a6;
+}
+
+/* ===== CUSTOM BRAND COLORS ===== */
+
+/* Example: Shopify Green */
+.driftmats-bundle-wrapper.shopify {
+  /* Shopify brand colors */
+}
+
+.shopify .bundle-option:hover,
+.shopify .bundle-option.selected {
+  border-color: #00b87c;
+}
+
+.shopify .bundle-badge {
+  background: #00b87c;
+}
+
+.shopify .bundle-add-to-cart {
+  background: #00b87c;
+}
+
+.shopify .bundle-add-to-cart:hover {
+  background: #009968;
+}
+
+.shopify .bundle-radio {
+  accent-color: #00b87c;
+}
+
+/* Example: Stripe Blue */
+.driftmats-bundle-wrapper.stripe {
+  /* Stripe brand colors */
+}
+
+.stripe .bundle-option:hover,
+.stripe .bundle-option.selected {
+  border-color: #635bff;
+}
+
+.stripe .bundle-badge {
+  background: #635bff;
+}
+
+.stripe .bundle-add-to-cart {
+  background: #635bff;
+}
+
+.stripe .bundle-add-to-cart:hover {
+  background: #5a52ff;
+}
+
+.stripe .bundle-radio {
+  accent-color: #635bff;
+}
+
+/* ===== USAGE INSTRUCTIONS ===== */
+
+/* 
+To use these color variants, add the class to your bundle wrapper:
+
+Liquid template:
+<div class="driftmats-bundle-wrapper blue" data-product-id="{{ product_id }}">
+
+Or via JavaScript:
+document.querySelector('.driftmats-bundle-wrapper').classList.add('green');
+
+Available classes:
+- original (default red)
+- blue
+- green  
+- purple
+- orange
+- black
+- pink
+- teal
+- shopify
+- stripe
+
+Custom colors:
+Replace the hex values with your brand colors and create new variants.
+*/

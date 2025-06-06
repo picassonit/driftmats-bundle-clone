@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriftMats Bundle Clone - Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .demo-header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .demo-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        .product-images {
+            text-align: center;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .product-info h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        .product-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            .demo-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>DriftMats Bundle Clone - Live Demo</h1>
+            <p>Exact replica of DriftMats bundle functionality</p>
+        </div>
+        
+        <div class="demo-content">
+            <div class="product-images">
+                <div class="product-image">
+                    Product Image Placeholder
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <div style="width: 60px; height: 60px; background: #f0f0f0; border-radius: 4px;"></div>
+                    <div style="width: 60px; height: 60px; background: #f0f0f0; border-radius: 4px;"></div>
+                    <div style="width: 60px; height: 60px; background: #f0f0f0; border-radius: 4px;"></div>
+                    <div style="width: 60px; height: 60px; background: #f0f0f0; border-radius: 4px;"></div>
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1>DriftMat Pro</h1>
+                <div class="product-price">$29.99</div>
+                <div class="product-description">
+                    Premium drift mat designed for performance and style. 
+                    Made with high-quality materials for durability and precision.
+                    Perfect for both beginners and professional drifters.
+                </div>
+                
+                <!-- DriftMats Bundle Implementation -->
+                <div class="driftmats-bundle-wrapper" data-product-id="demo">
+                    <h3 class="bundle-title">BUNDLE & SAVE</h3>
+                    
+                    <div class="bundle-options">
+                        
+                        <!-- 1 Pack Option -->
+                        <div class="bundle-option" data-quantity="1" data-discount="0">
+                            <div class="bundle-option-content">
+                                <div class="bundle-quantity">
+                                    <span class="quantity-number">1</span>
+                                    <span class="quantity-text">pack</span>
+                                </div>
+                                <div class="bundle-details">
+                                    <div class="bundle-price">
+                                        <span class="price">$29.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="radio" name="bundle-selection" value="1" class="bundle-radio" id="bundle-1">
+                        </div>
+                        
+                        <!-- 2 Pack Option - MOST POPULAR -->
+                        <div class="bundle-option most-popular selected" data-quantity="2" data-discount="10">
+                            <div class="bundle-badge">MOST POPULAR</div>
+                            <div class="bundle-option-content">
+                                <div class="bundle-quantity">
+                                    <span class="quantity-number">2</span>
+                                    <span class="quantity-text">pack</span>
+                                </div>
+                                <div class="bundle-details">
+                                    <div class="bundle-price">
+                                        <span class="original-price">$59.98</span>
+                                        <span class="price">$53.98</span>
+                                    </div>
+                                    <div class="bundle-savings">
+                                        <span class="savings-text">Save 10%</span>
+                                    </div>
+                                    <div class="free-gift">
+                                        <span class="gift-text">+ FREE $5 Gift Card</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="radio" name="bundle-selection" value="2" class="bundle-radio" id="bundle-2" checked>
+                        </div>
+                        
+                        <!-- 3 Pack Option - BEST VALUE -->
+                        <div class="bundle-option best-value" data-quantity="3" data-discount="12">
+                            <div class="bundle-badge">BEST VALUE</div>
+                            <div class="bundle-option-content">
+                                <div class="bundle-quantity">
+                                    <span class="quantity-number">3</span>
+                                    <span class="quantity-text">Pack</span>
+                                </div>
+                                <div class="bundle-details">
+                                    <div class="bundle-price">
+                                        <span class="original-price">$89.97</span>
+                                        <span class="price">$79.17</span>
+                                    </div>
+                                    <div class="bundle-savings">
+                                        <span class="savings-text">Save 12%</span>
+                                    </div>
+                                    <div class="free-gift">
+                                        <span class="gift-text">+ FREE Needles for the Wall</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="radio" name="bundle-selection" value="3" class="bundle-radio" id="bundle-3">
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Add to Cart Button -->
+                    <div class="bundle-cart-actions">
+                        <button type="button" class="btn bundle-add-to-cart">
+                            <span class="cart-text">Add to Cart</span>
+                            <span class="cart-price" id="bundle-total-price">$53.98</span>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Include the bundle styles -->
+    <style>
+    .driftmats-bundle-wrapper {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 400px;
+      margin: 20px 0;
+    }
+    
+    .bundle-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #333;
+    }
+    
+    .bundle-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .bundle-option {
+      position: relative;
+      background: rgba(143, 143, 143, 0.07);
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .bundle-option:hover,
+    .bundle-option.selected {
+      background: white;
+      border-color: #ff0000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .bundle-option-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .bundle-quantity {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .quantity-number {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1;
+    }
+    
+    .quantity-text {
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      text-transform: lowercase;
+    }
+    
+    .bundle-details {
+      text-align: right;
+      flex: 1;
+      margin-left: 16px;
+    }
+    
+    .bundle-price {
+      margin-bottom: 4px;
+    }
+    
+    .original-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-right: 8px;
+    }
+    
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .bundle-savings {
+      margin-bottom: 4px;
+    }
+    
+    .savings-text {
+      font-size: 12px;
+      font-weight: bold;
+      color: #00a651;
+    }
+    
+    .free-gift {
+      margin-top: 4px;
+    }
+    
+    .gift-text {
+      font-size: 12px;
+      font-weight: bold;
+      color: #ff0000;
+    }
+    
+    .bundle-badge {
+      position: absolute;
+      top: -8px;
+      left: 16px;
+      background: #ff0000;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .bundle-radio {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 20px;
+      height: 20px;
+      accent-color: #ff0000;
+    }
+    
+    .bundle-cart-actions {
+      margin-top: 20px;
+    }
+    
+    .bundle-add-to-cart {
+      width: 100%;
+      background: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .bundle-add-to-cart:hover {
+      background: #e60000;
+    }
+    
+    .bundle-add-to-cart:active {
+      background: #cc0000;
+    }
+    
+    .cart-text {
+      flex: 1;
+      text-align: left;
+    }
+    
+    .cart-price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    </style>
+
+    <!-- Demo JavaScript -->
+    <script>
+    (function() {
+      'use strict';
+      
+      const bundleWrapper = document.querySelector('.driftmats-bundle-wrapper');
+      const bundleOptions = bundleWrapper.querySelectorAll('.bundle-option');
+      const bundleRadios = bundleWrapper.querySelectorAll('.bundle-radio');
+      const addToCartBtn = bundleWrapper.querySelector('.bundle-add-to-cart');
+      const totalPriceSpan = bundleWrapper.querySelector('#bundle-total-price');
+      
+      const productPrice = 29.99;
+      
+      // Handle bundle option selection
+      bundleOptions.forEach((option, index) => {
+        option.addEventListener('click', function() {
+          // Remove selected class from all options
+          bundleOptions.forEach(opt => opt.classList.remove('selected'));
+          
+          // Add selected class to clicked option
+          this.classList.add('selected');
+          
+          // Check the corresponding radio button
+          bundleRadios[index].checked = true;
+          
+          // Update total price
+          updateTotalPrice();
+        });
+      });
+      
+      // Handle radio button changes
+      bundleRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          if (this.checked) {
+            // Remove selected class from all options
+            bundleOptions.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to parent option
+            this.closest('.bundle-option').classList.add('selected');
+            
+            // Update total price
+            updateTotalPrice();
+          }
+        });
+      });
+      
+      function updateTotalPrice() {
+        const selectedOption = bundleWrapper.querySelector('.bundle-option.selected');
+        if (!selectedOption) return;
+        
+        const quantity = parseInt(selectedOption.dataset.quantity);
+        const discount = parseInt(selectedOption.dataset.discount);
+        
+        let totalPrice = productPrice * quantity;
+        if (discount > 0) {
+          totalPrice = totalPrice * (1 - discount / 100);
+        }
+        
+        totalPriceSpan.textContent = '$' + totalPrice.toFixed(2);
+      }
+      
+      // Handle add to cart (demo only)
+      addToCartBtn.addEventListener('click', function() {
+        const selectedOption = bundleWrapper.querySelector('.bundle-option.selected');
+        if (!selectedOption) return;
+        
+        const quantity = parseInt(selectedOption.dataset.quantity);
+        const price = totalPriceSpan.textContent;
+        
+        alert(`Demo: Added ${quantity} items to cart for ${price}`);
+      });
+      
+    })();
+    </script>
+</body>
+</html>

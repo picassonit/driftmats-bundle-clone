@@ -1,0 +1,227 @@
+{% comment %}
+  Alternative discount configurations for DriftMats Bundle Clone
+  
+  Choose one of these configurations or create your own
+{% endcomment %}
+
+{% comment %} ===== CONFIGURATION 1: ORIGINAL DRIFTMATS ===== {% endcomment %}
+{% comment %}
+  1 pack: No discount
+  2 pack: 10% discount + $5 Gift Card
+  3 pack: 12% discount + Wall Needles
+{% endcomment %}
+
+<!-- 2 Pack -->
+{% assign discount_2pack = 10 %}
+{% assign discounted_price_2 = product_price | times: 2 | times: 0.9 %}
+<!-- 3 Pack -->
+{% assign discount_3pack = 12 %}
+{% assign discounted_price_3 = product_price | times: 3 | times: 0.88 %}
+
+{% comment %} ===== CONFIGURATION 2: AGGRESSIVE SAVINGS ===== {% endcomment %}
+{% comment %}
+  1 pack: No discount
+  2 pack: 15% discount + Free Shipping
+  3 pack: 20% discount + Free Shipping + Bonus Item
+{% endcomment %}
+
+<!-- 2 Pack -->
+{% assign discount_2pack = 15 %}
+{% assign discounted_price_2 = product_price | times: 2 | times: 0.85 %}
+<!-- 3 Pack -->
+{% assign discount_3pack = 20 %}
+{% assign discounted_price_3 = product_price | times: 3 | times: 0.8 %}
+
+{% comment %} ===== CONFIGURATION 3: MODERATE SAVINGS ===== {% endcomment %}
+{% comment %}
+  1 pack: No discount
+  2 pack: 8% discount
+  3 pack: 15% discount
+{% endcomment %}
+
+<!-- 2 Pack -->
+{% assign discount_2pack = 8 %}
+{% assign discounted_price_2 = product_price | times: 2 | times: 0.92 %}
+<!-- 3 Pack -->
+{% assign discount_3pack = 15 %}
+{% assign discounted_price_3 = product_price | times: 3 | times: 0.85 %}
+
+{% comment %} ===== CONFIGURATION 4: TIERED BUNDLES ===== {% endcomment %}
+{% comment %}
+  2 pack: 5% discount
+  3 pack: 10% discount  
+  4 pack: 15% discount
+{% endcomment %}
+
+<!-- 2 Pack -->
+<div class="bundle-option" data-quantity="2" data-discount="5">
+  <div class="bundle-option-content">
+    <div class="bundle-quantity">
+      <span class="quantity-number">2</span>
+      <span class="quantity-text">pack</span>
+    </div>
+    <div class="bundle-details">
+      <div class="bundle-price">
+        {% assign discounted_price = product_price | times: 2 | times: 0.95 %}
+        <span class="original-price">${{ product_price | times: 2 | money_without_currency }}</span>
+        <span class="price">${{ discounted_price | money_without_currency }}</span>
+      </div>
+      <div class="bundle-savings">
+        <span class="savings-text">Save 5%</span>
+      </div>
+    </div>
+  </div>
+  <input type="radio" name="bundle-selection" value="2" class="bundle-radio" id="bundle-2">
+</div>
+
+<!-- 3 Pack -->
+<div class="bundle-option best-value" data-quantity="3" data-discount="10">
+  <div class="bundle-badge">MOST POPULAR</div>
+  <div class="bundle-option-content">
+    <div class="bundle-quantity">
+      <span class="quantity-number">3</span>
+      <span class="quantity-text">pack</span>
+    </div>
+    <div class="bundle-details">
+      <div class="bundle-price">
+        {% assign discounted_price_3 = product_price | times: 3 | times: 0.9 %}
+        <span class="original-price">${{ product_price | times: 3 | money_without_currency }}</span>
+        <span class="price">${{ discounted_price_3 | money_without_currency }}</span>
+      </div>
+      <div class="bundle-savings">
+        <span class="savings-text">Save 10%</span>
+      </div>
+    </div>
+  </div>
+  <input type="radio" name="bundle-selection" value="3" class="bundle-radio" id="bundle-3" checked>
+</div>
+
+<!-- 4 Pack -->
+<div class="bundle-option best-value" data-quantity="4" data-discount="15">
+  <div class="bundle-badge">BEST VALUE</div>
+  <div class="bundle-option-content">
+    <div class="bundle-quantity">
+      <span class="quantity-number">4</span>
+      <span class="quantity-text">pack</span>
+    </div>
+    <div class="bundle-details">
+      <div class="bundle-price">
+        {% assign discounted_price_4 = product_price | times: 4 | times: 0.85 %}
+        <span class="original-price">${{ product_price | times: 4 | money_without_currency }}</span>
+        <span class="price">${{ discounted_price_4 | money_without_currency }}</span>
+      </div>
+      <div class="bundle-savings">
+        <span class="savings-text">Save 15%</span>
+      </div>
+      <div class="free-gift">
+        <span class="gift-text">+ FREE Premium Case</span>
+      </div>
+    </div>
+  </div>
+  <input type="radio" name="bundle-selection" value="4" class="bundle-radio" id="bundle-4">
+</div>
+
+{% comment %} ===== CONFIGURATION 5: FREE GIFTS FOCUS ===== {% endcomment %}
+{% comment %}
+  Smaller discounts but attractive free gifts
+{% endcomment %}
+
+<!-- 2 Pack with Free Shipping -->
+<div class="bundle-option most-popular" data-quantity="2" data-discount="5">
+  <div class="bundle-badge">FREE SHIPPING</div>
+  <div class="bundle-option-content">
+    <div class="bundle-quantity">
+      <span class="quantity-number">2</span>
+      <span class="quantity-text">pack</span>
+    </div>
+    <div class="bundle-details">
+      <div class="bundle-price">
+        {% assign discounted_price = product_price | times: 2 | times: 0.95 %}
+        <span class="original-price">${{ product_price | times: 2 | money_without_currency }}</span>
+        <span class="price">${{ discounted_price | money_without_currency }}</span>
+      </div>
+      <div class="bundle-savings">
+        <span class="savings-text">Save 5%</span>
+      </div>
+      <div class="free-gift">
+        <span class="gift-text">+ FREE Shipping ($15 value)</span>
+      </div>
+    </div>
+  </div>
+  <input type="radio" name="bundle-selection" value="2" class="bundle-radio" id="bundle-2">
+</div>
+
+<!-- 3 Pack with Multiple Gifts -->
+<div class="bundle-option best-value" data-quantity="3" data-discount="8">
+  <div class="bundle-badge">BEST VALUE</div>
+  <div class="bundle-option-content">
+    <div class="bundle-quantity">
+      <span class="quantity-number">3</span>
+      <span class="quantity-text">pack</span>
+    </div>
+    <div class="bundle-details">
+      <div class="bundle-price">
+        {% assign discounted_price_3 = product_price | times: 3 | times: 0.92 %}
+        <span class="original-price">${{ product_price | times: 3 | money_without_currency }}</span>
+        <span class="price">${{ discounted_price_3 | money_without_currency }}</span>
+      </div>
+      <div class="bundle-savings">
+        <span class="savings-text">Save 8%</span>
+      </div>
+      <div class="free-gift">
+        <span class="gift-text">+ FREE Shipping + Bonus Accessories</span>
+      </div>
+    </div>
+  </div>
+  <input type="radio" name="bundle-selection" value="3" class="bundle-radio" id="bundle-3">
+</div>
+
+{% comment %} ===== CUSTOM DISCOUNT CALCULATOR ===== {% endcomment %}
+{% comment %}
+  Dynamic discount based on product price or tags
+{% endcomment %}
+
+{% liquid
+  # Higher discounts for expensive products
+  if product.price > 5000
+    assign discount_2pack = 15
+    assign discount_3pack = 25
+  elsif product.price > 2000
+    assign discount_2pack = 12
+    assign discount_3pack = 20
+  else
+    assign discount_2pack = 10
+    assign discount_3pack = 15
+  endif
+  
+  # Special discounts for tagged products
+  if product.tags contains 'premium'
+    assign discount_2pack = discount_2pack | plus: 5
+    assign discount_3pack = discount_3pack | plus: 5
+  endif
+  
+  # Calculate prices
+  assign discount_multiplier_2 = 100 | minus: discount_2pack | divided_by: 100.0
+  assign discount_multiplier_3 = 100 | minus: discount_3pack | divided_by: 100.0
+  
+  assign discounted_price_2 = product_price | times: 2 | times: discount_multiplier_2
+  assign discounted_price_3 = product_price | times: 3 | times: discount_multiplier_3
+%}
+
+{% comment %} ===== USAGE INSTRUCTIONS ===== {% endcomment %}
+{% comment %}
+  To implement any of these configurations:
+  
+  1. Choose a configuration above
+  2. Replace the discount calculation section in your main snippet
+  3. Update the discount percentages in the JavaScript section
+  4. Modify gift text and badges as desired
+  
+  For custom configurations:
+  - Adjust the discount percentages
+  - Change the quantity options (add 4-pack, 5-pack, etc.)
+  - Modify free gift offerings
+  - Update badge text and styling
+  
+  Remember to update both the Liquid calculations and JavaScript logic!
+{% endcomment %}
